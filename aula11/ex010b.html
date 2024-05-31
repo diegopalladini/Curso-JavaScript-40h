@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 009.js em HTML</title>
+</head>
+<body>
+    <h1>Gringo ou Brasileiro?</h1>
+    Em qual país você nasceu? <input type="text" name="pais" id="ipais">
+    <input type="button" value="Verificar" onclick="passaporte()">
+    <div id="res">Resultado</div>
+    <script>
+        function passaporte() {
+            var pais = document.getElementsByName("input#ipais")
+            if (pais === 'Brasil') {
+                res.innerText = 'Olá, brasileiro!'
+            } else {
+                res.innerText = 'Olá, gringo!'
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos DOM</title>
+    <style>
+        div#area {
+            font: normal 1.5em arial;
+            background-color: green;
+            color: white;
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+
+        }
+    </style>
+</head>
+<body>
+    <div id="area" onclick="clicar()" onmouseenter="entrar()" onmouseleave="sair()">
+        Interaja...
+    </div>
+
+    <script>
+
+        // var area = document.querySelector('div#area') se tivesse aqui, serviria pra todas as functions e não precisaria repetir em cada uma delas
+
+        function clicar() {
+            var area = document.querySelector('div#area')
+            // também funcionaria var area = window.document.getElementById('area')
+            area.innerText = 'Parabéns'
+            area.style.background = 'red'
+            area.style.color = 'white'
+        }
+        
+        function entrar() {
+            var area = document.querySelector('div#area')
+            area.innerText = 'Atenção...'
+            area.style.background = 'yellow'
+            area.style.color = 'black'
+        }
+
+        function sair() {
+            var area = document.querySelector('div#area')
+            area.innerText = 'Interaja...'
+            area.style.background = 'green'
+            area.style.color = 'white'
+        }
+    </script>
+</body>
+</html>

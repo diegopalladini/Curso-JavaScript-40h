@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DETRAN</title>
+    <style>
+        body {
+            background-color: gray;
+            color: white;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            margin-left: 50px;
+        }
+
+        h1 {
+            font-size: 3em;
+        }
+
+        input#txtvel {
+            width: 100px;
+            height: 30px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+
+        input#botao {
+            width: 100px;
+            height: 40px;
+            font-size: 18px;
+        }
+
+        p {
+            font-size: 1.5em;
+        }
+
+
+        p#res {
+            padding: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Sistema de multas</h1>
+    <p>
+    Velocidade do carro: <input type="number" name="vel" id="txtvel"> km/h
+    <input type="button" value="Verificar" id="botao" onclick="calcular()">
+    </p>
+    <p id="res">Resultado</p>
+    <script>
+        function calcular() {
+            var textovel = document.querySelector('input#txtvel')
+            var vel = Number(textovel.value)
+            var res = document.querySelector('p#res')
+
+            res.innerHTML = `<p>Sua velocidade atual é de ${vel} km/h.</p>`
+
+            if (vel > 90) {
+                res.innerText += `Você ultrapassou o limite de velocidade e levou uma multa.`
+                res.style.backgroundColor = 'red'
+            } else {
+                res.innerHTML += `Você não tem multas.`
+                
+            }
+        }
+        
+
+    </script>
+</body>
+</html>

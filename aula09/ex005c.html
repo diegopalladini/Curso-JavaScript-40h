@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primeiros passos com DOM</title>
+    <style>
+        body {
+            background-color: rgb(69, 120, 197);
+            color: white;
+            font: normal 1.5em arial;
+        }
+
+
+    </style>
+</head>
+<body>
+    <h1>Iniciando estudos DOM</h1>
+    <p>Aqui vai o resultado</p>
+    <p>Aprendendo a usar o <strong>DOM</strong> em JavaScript.</p>
+    <div id="msg">Clique em mim</div>
+    <script>
+        
+        var corpo = window.document.body // a var corpo é o elemento body do html
+        
+        var p1 = window.document.getElementsByTagName('p')[0] // a var p1 é o elemento parágrafo de número 0
+        
+        var d = window.document.getElementById('msg') // a var d é o elemento com o id="msg"
+        window.document.write(d.innerText) // escreva o texto dentro da var d
+        d.innerText = 'Não clique aqui' // mude o texto original da var d para 'Não clique aqui'
+        
+    </script>
+</body>
+</html>

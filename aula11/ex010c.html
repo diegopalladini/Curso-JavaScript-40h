@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saudação por País</title>
+</head>
+<body>
+  <h1>Saudação por País</h1>
+  <label for="pais">Digite o país onde você mora:</label>
+  <input type="text" id="pais" name="pais">
+  <button onclick="saudar()">Enviar</button>
+
+  <p id="mensagem"></p>
+
+  <script>
+    function saudar() {
+      // Obtém o valor do input e remove espaços extras
+      const pais = document.getElementById("pais").value.trim();
+
+      // Obtém o elemento do parágrafo onde a mensagem será exibida
+      const mensagem = document.getElementById("mensagem");
+
+      // Verifica o país e exibe a mensagem apropriada
+      if (pais.toLowerCase() === "brasil") {
+        mensagem.textContent = "Olá, brasileiro!";
+      } else {
+        mensagem.textContent = "Olá, gringo!";
+      }
+    }
+  </script>
+</body>
+</html>
